@@ -1,0 +1,48 @@
+.page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #e6e3df 25%, #ffffff 50%, #fbf0ea 75%, #dcdbdb 100%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    background-color: white;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navLink {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin: 0 0 0 5rem;
+}
+
+.logo {
+    margin: 0 0 0 2rem;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: rotate(-15deg);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 0 0 0;
+}
