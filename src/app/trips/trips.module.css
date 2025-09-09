@@ -1,6 +1,6 @@
 .page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #e6e3df 25%, #ffffff 50%, #fbf0ea 75%, #dcdbdb 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #ffd59f 25%, #fff9d9 50%, #ffc8ab 75%, #dcdbdb 100%);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@
 }
 
 .logo:hover {
-    transform: rotate(-15deg);
+    transform: rotate(-15deg) scale(1.1);
 }
 
 .main {
@@ -45,4 +45,111 @@
     flex-direction: column;
     align-items: center;
     padding: 6rem 0 0 0;
+}
+
+.title {
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tripsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.tripCard {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.tripLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tripImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efeitos hover para os cards */
+.tripCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tripCard:hover .tripImage {
+    transform: scale(1.05);
+}
+
+/* Estilização dos textos dentro dos cards */
+.tripCard h3 {
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tripCard h4 {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tripCard p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Estilização do loading */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.loading p {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.2rem;
+    font-weight: 500;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }

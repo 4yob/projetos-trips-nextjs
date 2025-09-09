@@ -52,13 +52,20 @@ export default function Trips() {
                     <>
                         <div className={styles.tripsContainer}>
                             {trips.map((trip) => (
+                                <Link
+                                key={trip.id}
+                                href={`/trips/${trip.id}`}
+                                className={styles.tripLink}
+                                >
                                 <div className={styles.tripCard}>
-                                    <img src={trip.photo} alt="Imagem da viagem" />
+                                    <img className={styles.tripImage} src={`/img/${trip.photo}`} alt={trip.title} />
                                     <h3>{trip.title}</h3>
+                                    <h4>{trip.place} - {trip.country}</h4>
                                     <p>{trip.start_date}</p>
                                     <p>{trip.end_date}</p>
                                     <p>{trip.created_at}</p>
                                 </div>
+                                </Link>
                             ))}
                         </div>
                     </>
