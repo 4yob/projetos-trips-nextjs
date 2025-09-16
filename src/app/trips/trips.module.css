@@ -8,6 +8,50 @@
     overflow: hidden;
 }
 
+.planeContainer {
+    position: relative;
+    width: 100%;
+    height: 50rem;
+    overflow: hidden;
+}
+
+.plane {
+    position: absolute;
+    top: 70%;
+    left: -120px;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
+    animation: planeDiagonal 16s linear infinite;
+    z-index: 1;
+    transform-origin: center;
+}
+
+.planeImage {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+@keyframes planeDiagonal {
+    0% {
+        left: -120px; /* começa fora do container à esquerda */
+        top: 70%; /* parte de baixo dentro do container */
+        transform: rotate(-20deg) translateY(0);
+        opacity: 0;
+    }
+    5% { opacity: 1; }
+    50% { top: 40%; transform: rotate(-20deg) translateY(4px); }
+    100% {
+        left: 100%; /* cruza até a borda direita do container */
+        top: 10%;
+        transform: rotate(-20deg) translateY(0);
+        opacity: 0.95;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .plane { animation: none; }
+}
+
 .main {
     display: flex;
     flex-direction: column;

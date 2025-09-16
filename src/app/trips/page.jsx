@@ -38,6 +38,18 @@ export default function Trips() {
     return (
         <div className={styles.page}>
             <Header />
+            <div className={styles.planeContainer}>
+                <div className={styles.plane} aria-hidden="true">
+                    <Image
+                        src="/icons/logo.png"
+                        alt="TRIPS logo em voo"
+                        width={64}
+                        height={64}
+                        className={styles.planeImage}
+                        priority
+                    />
+                </div>
+            </div>
             <main className={styles.main}>
                 <h1 className={styles.title}>Minhas Viagens</h1>
 
