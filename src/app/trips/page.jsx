@@ -30,6 +30,7 @@ export default function Trips() {
     return (
         <div className={styles.page}>
             <header className={styles.header}>
+                <Link className={styles.left} href={"/"}>
                 <Image
                         src="/icons/logo.png"
                         alt="Logo TRIPS.COM"
@@ -37,9 +38,13 @@ export default function Trips() {
                         height={50}
                         className={styles.logo}
                     />
+                <h2 className={styles.logoText}>TRIPS.COM</h2>
+                </Link>
+                <div className={styles.right}>
                 <Link href="/" className={styles.navLink}>Home</Link>
                 <Link href="/favorites" className={styles.navLink}>Destaques</Link>
                 <Link href="/about" className={styles.navLink}>Sobre</Link>
+                </div>
             </header>
             <main className={styles.main}>
                 <h1 className={styles.title}>Minhas Viagens</h1>

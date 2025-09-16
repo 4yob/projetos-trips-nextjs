@@ -53,13 +53,32 @@
   font-size: 2.5rem;
   font-weight: 800;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  
+}
+
+.logoText {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff7171 0%, #ffbb62 25%, #ffe75f 50%, #ff9359 75%, #ff8080 100%);
+  background-clip: border-box;
+  margin-left: 1.5rem;
+  text-shadow: none;
+  background-size: 200%;
+  background-position: left;
+  transition: background-position 0.8s ease;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logoText:hover {
+  background-position: right;
 }
 
 .description {
   color: rgba(0, 0, 0, 0.95);
   font-size: 1.25rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  font-weight: 300;
+  font-weight: 500;
   max-width: 600px;
 }
 
@@ -112,20 +131,20 @@
   .page {
     padding: 1rem;
   }
-  
+
   .container {
     padding: 2rem 1.5rem;
     border-radius: 16px;
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
-  
+
   .description {
     font-size: 1.1rem;
   }
-  
+
   .logo {
     width: 120px;
     height: 120px;
@@ -136,11 +155,11 @@
   .title {
     font-size: 2rem;
   }
-  
+
   .description {
     font-size: 1rem;
   }
-  
+
   .container {
     padding: 1.5rem 1rem;
   }
@@ -153,7 +172,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 25% 25%, rgba(255, 191, 36, 0.1) 0%, transparent 25%),
     radial-gradient(circle at 75% 75%, rgba(217, 119, 6, 0.1) 0%, transparent 25%);
   animation: gradientShift 8s ease-in-out infinite;
@@ -161,18 +180,24 @@
 }
 
 @keyframes gradientShift {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.7;
   }
 }
 
 @keyframes floatImage {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-15px);
   }

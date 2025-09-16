@@ -1,6 +1,6 @@
 .page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #ffd59f 25%, #fff9d9 50%, #ffc8ab 75%, #dcdbdb 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #ffd59f 25%, #fff9d9 50%, #ffc8ab 75%, #ffffff 100%);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -15,11 +15,29 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 50%;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    padding-right: 2rem;
+    gap: 4rem;
 }
 
 .navLink {
@@ -27,7 +45,17 @@
     color: rgba(0, 0, 0, 0.85);
     font-weight: 500;
     transition: color 0.3s ease;
-    margin: 0 0 0 5rem;
+    font-size: 0.9rem;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffeaea 0%, #ffbb62 25%, #ffe75f 50%, #ff9359 75%, #ff8080 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 1.5rem;
 }
 
 .logo {
@@ -95,7 +123,6 @@
     transition: transform 0.3s ease;
 }
 
-/* Efeitos hover para os cards */
 .tripCard:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -105,7 +132,6 @@
     transform: scale(1.05);
 }
 
-/* Estilização dos textos dentro dos cards */
 .tripCard h3 {
     color: rgb(0, 0, 0);
     font-size: 1.3rem;
@@ -127,7 +153,6 @@
     margin-bottom: 0.3rem;
 }
 
-/* Estilização do loading */
 .loading {
     display: flex;
     justify-content: center;
