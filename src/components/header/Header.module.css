@@ -1,0 +1,67 @@
+.header {
+    background-color: white;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 50%;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    padding-right: 2rem;
+    gap: 4rem;
+}
+
+.navLink {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff7171 0%, #ffbb62 25%, #ffe75f 50%, #ff9359 75%, #ff8080 100%);
+    background-clip: border-box;
+    margin-left: 1.5rem;
+    text-shadow: none;
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.8s ease;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logoText:hover {
+    background-position: right;
+}
+
+.logo {
+    margin: 0 0 0 2rem;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: rotate(-15deg) scale(1.1);
+}

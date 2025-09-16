@@ -3,12 +3,20 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from "./trips.module.css";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import Header from '../../components/header/Header';
 
 export default function Trips() {
     const [trips, setTrips] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const formatDate = (value) => {
+        if (!value) return "";
+        const d = new Date(value);
+        if (isNaN(d)) return value;
+        return d.toLocaleDateString('pt-BR');
+    };
 
     const fetchTrips = async () => {
         try {
@@ -29,23 +37,7 @@ export default function Trips() {
 
     return (
         <div className={styles.page}>
-            <header className={styles.header}>
-                <Link className={styles.left} href={"/"}>
-                <Image
-                        src="/icons/logo.png"
-                        alt="Logo TRIPS.COM"
-                        width={50}
-                        height={50}
-                        className={styles.logo}
-                    />
-                <h2 className={styles.logoText}>TRIPS.COM</h2>
-                </Link>
-                <div className={styles.right}>
-                <Link href="/" className={styles.navLink}>Home</Link>
-                <Link href="/favorites" className={styles.navLink}>Destaques</Link>
-                <Link href="/about" className={styles.navLink}>Sobre</Link>
-                </div>
-            </header>
+            <Header />
             <main className={styles.main}>
                 <h1 className={styles.title}>Minhas Viagens</h1>
 
@@ -57,20 +49,30 @@ export default function Trips() {
                     <>
                         <div className={styles.tripsContainer}>
                             {trips.map((trip) => (
-                                <Link
-                                key={trip.id}
-                                href={`/trips/${trip.id}`}
-                                className={styles.tripLink}
-                                >
-                                <div className={styles.tripCard}>
-                                    <img className={styles.tripImage} src={`/img/${trip.photo}`} alt={trip.title} />
+                                <div key={trip.id} className={styles.tripCard}>
+                                    <div className={styles.tripImageWrapper}>
+                                        <Image
+                                            src={`/img/${trip.photo}`}
+                                            alt={trip.title}
+                                            fill
+                                            className={styles.tripImage}
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+                                    </div>
                                     <h3>{trip.title}</h3>
                                     <h4>{trip.place} - {trip.country}</h4>
-                                    <p>{trip.start_date}</p>
-                                    <p>{trip.end_date}</p>
-                                    <p>{trip.created_at}</p>
+                                    <p>Início: {trip.start_date}</p>
+                                    <p>Fim: {trip.end_date}</p>
+                                    <p>Criado em: {formatDate(trip.created_at)}</p>
+                                    <div className={styles.cardActions}>
+                                        <Link
+                                            href={`/trips/${trip.id}`}
+                                            className={styles.cardButton}
+                                        >
+                                            Ver Detalhes
+                                        </Link>
+                                    </div>
                                 </div>
-                                </Link>
                             ))}
                         </div>
                     </>
