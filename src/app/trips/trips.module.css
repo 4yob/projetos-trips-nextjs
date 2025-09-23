@@ -11,13 +11,13 @@
 .planeContainer {
     position: relative;
     width: 100%;
-    height: 50rem;
+    height: 12rem;
     overflow: hidden;
 }
 
 .plane {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: -120px;
     filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
     animation: planeDiagonal 16s linear infinite;
@@ -33,18 +33,14 @@
 
 @keyframes planeDiagonal {
     0% {
-        left: -120px; /* começa fora do container à esquerda */
-        top: 70%; /* parte de baixo dentro do container */
-        transform: rotate(-20deg) translateY(0);
+        left: -120px;
         opacity: 0;
     }
     5% { opacity: 1; }
-    50% { top: 40%; transform: rotate(-20deg) translateY(4px); }
+    95% { opacity: 1; }
     100% {
-        left: 100%; /* cruza até a borda direita do container */
-        top: 10%;
-        transform: rotate(-20deg) translateY(0);
-        opacity: 0.95;
+        left: 100%;
+        opacity: 0;
     }
 }
 
@@ -69,14 +65,14 @@
 }
 
 .tripsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    width: 90%;
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 95%;
+    max-width: 1000px;
     margin-top: 2rem;
     padding-bottom: 4rem;
-    align-items: stretch;
+    align-items: center;
 }
 
 .tripCard {
@@ -87,15 +83,77 @@
     border: 1px solid rgba(255, 255, 255, 0.374);
     border-radius: 24px;
     padding: 32px;
-    min-height: 320px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    min-height: 380px;
+    height: 380px;
+    width: 100%;
+    max-width: 500px;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: flex-start;
     animation: cardEnter 0.6s ease both;
+}
+
+.tripCard .cardContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tripCard .cardInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: opacity 0.6s ease;
+}
+
+.tripCard .titleOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), transparent);
+    color: white;
+    padding: 1.5rem 2rem 2rem 2rem;
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.tripCard .titleOverlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.tripCard:nth-child(odd) {
+    align-self: flex-start;
+    margin-left: 0;
+    margin-right: auto;
+    transform: translateX(-5%);
+    animation: cardEnterLeft 0.6s ease both;
+}
+
+.tripCard:nth-child(even) {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+    transform: translateX(5%);
+    animation: cardEnterRight 0.6s ease both;
 }
 
 .tripCard::before {
@@ -116,6 +174,7 @@
     -webkit-mask-composite: xor;
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .tripLink {
@@ -130,12 +189,14 @@
 }
 
 .tripImageWrapper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
     border-radius: 1rem;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 .tripImageWrapper::after {
@@ -147,13 +208,61 @@
 }
 
 .tripCard:hover {
-    transform: translateY(-12px) scale(1.02);
     background: rgba(255, 255, 255, 0.84);
     border-color: rgba(255, 255, 255, 0.55);
     box-shadow: 
         0 25px 50px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    overflow: visible;
+    z-index: 10;
+    height: 380px;
+}
+
+.tripCard:nth-child(odd):hover {
+    transform: translateX(-5%);
+    width: 180%;
+    max-width: 900px;
+}
+
+.tripCard:nth-child(even):hover {
+    transform: translateX(-75%);
+    width: 180%;
+    max-width: 900px;
+}
+
+.tripCard:hover .cardContent {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.tripCard:nth-child(odd):hover .cardContent {
+    flex-direction: row;
+}
+
+.tripCard:nth-child(even):hover .cardContent {
+    flex-direction: row-reverse;
+}
+
+.tripCard:hover .tripImageWrapper {
+    position: relative;
+    width: 45%;
+    min-width: 250px;
+    height: 300px;
+    margin-bottom: 0;
+}
+
+.tripCard:hover .cardInfo {
+    position: relative;
+    width: 50%;
+    height: auto;
+    padding-left: 1rem;
+    opacity: 1;
+}
+
+.tripCard:hover .titleOverlay {
+    opacity: 0;
 }
 
 .tripCard:hover::before {
@@ -161,7 +270,7 @@
 }
 
 .tripCard:hover .tripImage {
-    transform: scale(1.06);
+    transform: none;
 }
 
 .tripCard h3 {
@@ -190,16 +299,102 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes cardEnterLeft {
+    from { opacity: 0; transform: translateX(-30px) translateY(12px); }
+    to { opacity: 1; transform: translateX(0) translateY(0); }
+}
+
+@keyframes cardEnterRight {
+    from { opacity: 0; transform: translateX(30px) translateY(12px); }
+    to { opacity: 1; transform: translateX(0) translateY(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .tripCard { animation: none; }
+    .tripCard:nth-child(odd) { animation: none; }
+    .tripCard:nth-child(even) { animation: none; }
     .tripCard:hover { transform: none; }
     .tripCard:hover .tripImage { transform: none; }
+}
+
+@media (max-width: 768px) {
+    .tripsContainer {
+        max-width: 100%;
+        padding: 0 1rem;
+        width: 100%;
+    }
+    
+    .tripCard {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .tripCard:nth-child(odd),
+    .tripCard:nth-child(even) {
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        transform: none;
+        animation: cardEnter 0.6s ease both;
+    }
+    
+    .tripCard:nth-child(odd):hover,
+    .tripCard:nth-child(even):hover {
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .tripCard:hover .cardContent {
+        flex-direction: column;
+    }
+    
+    .tripCard:hover .tripImageWrapper {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .tripCard:hover .cardInfo {
+        width: 100%;
+        padding-left: 0;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tripCard:nth-child(odd) {
+        transform: translateX(-3%);
+    }
+    
+    .tripCard:nth-child(even) {
+        transform: translateX(3%);
+    }
+    
+    .tripCard:nth-child(odd):hover {
+        transform: translateX(-3%);
+        width: 160%;
+        max-width: 700px;
+    }
+    
+    .tripCard:nth-child(even):hover {
+        transform: translateX(-57%);
+        width: 160%;
+        max-width: 700px;
+    }
 }
 
 .cardActions {
     display: flex;
     justify-content: flex-end;
     margin-top: 1rem;
+}
+
+.tripCard:nth-child(odd):hover .cardActions {
+    justify-content: flex-end;
+}
+
+.tripCard:nth-child(even):hover .cardActions {
+    justify-content: flex-start;
 }
 
 .cardButton {
@@ -212,6 +407,14 @@
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(255, 107, 53, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.cardButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(255, 107, 53, 0.45);
+    filter: brightness(1.03);
 }
 
 .cardButton:hover {

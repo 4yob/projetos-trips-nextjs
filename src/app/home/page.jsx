@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Link href="/" className={styles.navLink}>Home</Link>
         <Link href="/about" className={styles.navLink}>Sobre</Link>
       </header>
       <div className={styles.container}>

@@ -38,18 +38,7 @@ export default function Trips() {
     return (
         <div className={styles.page}>
             <Header />
-            <div className={styles.planeContainer}>
-                <div className={styles.plane} aria-hidden="true">
-                    <Image
-                        src="/icons/logo.png"
-                        alt="TRIPS logo em voo"
-                        width={64}
-                        height={64}
-                        className={styles.planeImage}
-                        priority
-                    />
-                </div>
-            </div>
+
             <main className={styles.main}>
                 <h1 className={styles.title}>Minhas Viagens</h1>
 
@@ -62,27 +51,38 @@ export default function Trips() {
                         <div className={styles.tripsContainer}>
                             {trips.map((trip) => (
                                 <div key={trip.id} className={styles.tripCard}>
-                                    <div className={styles.tripImageWrapper}>
-                                        <Image
-                                            src={`/img/${trip.photo}`}
-                                            alt={trip.title}
-                                            fill
-                                            className={styles.tripImage}
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        />
-                                    </div>
-                                    <h3>{trip.title}</h3>
-                                    <h4>{trip.place} - {trip.country}</h4>
-                                    <p>Início: {trip.start_date}</p>
-                                    <p>Fim: {trip.end_date}</p>
-                                    <p>Criado em: {formatDate(trip.created_at)}</p>
-                                    <div className={styles.cardActions}>
-                                        <Link
-                                            href={`/trips/${trip.id}`}
-                                            className={styles.cardButton}
-                                        >
-                                            Ver Detalhes
-                                        </Link>
+                                    <div className={styles.cardContent}>
+                                        <div className={styles.tripImageWrapper}>
+                                            <Image
+                                                src={`/img/${trip.photo}`}
+                                                alt={trip.title}
+                                                fill
+                                                className={styles.tripImage}
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            />
+                                        </div>
+
+                                        <div className={styles.titleOverlay}>
+                                            <h3>{trip.title}</h3>
+                                        </div>
+                                        
+                                        <div className={styles.cardInfo}>
+                                            <div>
+                                                <h3>{trip.title}</h3>
+                                                <h4>{trip.place} - {trip.country}</h4>
+                                                <p>Início: {formatDate(trip.start_date)}</p>
+                                                <p>Fim: {formatDate(trip.end_date)}</p>
+                                                <p>Criado em: {formatDate(trip.created_at)}</p>
+                                            </div>
+                                            <div className={styles.cardActions}>
+                                                <Link
+                                                    href={`/trips/${trip.id}`}
+                                                    className={styles.cardButton}
+                                                >
+                                                    Ver Detalhes
+                                                </Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
@@ -90,6 +90,18 @@ export default function Trips() {
                     </>
                 )}
             </main>
+            <div className={styles.planeContainer}>
+                <div className={styles.plane} aria-hidden="true">
+                    <Image
+                        src="/icons/logo.png"
+                        alt="TRIPS logo em voo"
+                        width={64}
+                        height={64}
+                        className={styles.planeImage}
+                        priority
+                    />
+                </div>
+            </div>
         </div>
     );
 }
