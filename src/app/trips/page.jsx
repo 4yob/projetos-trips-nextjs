@@ -40,11 +40,28 @@ export default function Trips() {
             <Header />
 
             <main className={styles.main}>
-                <h1 className={styles.title}>Minhas Viagens</h1>
+                <h1 className={styles.title}>Galeria de Viagens</h1>
 
                 {loading ? (
                     <div className={styles.loading}>
-                        <p>Carregando Viagens . . .</p>
+                        <div className={styles.loadingPlane}>
+                            <Image
+                                src="/icons/logo.png"
+                                alt="Avião carregando"
+                                width={48}
+                                height={48}
+                                className={styles.loadingPlaneImage}
+                            />
+                        </div>
+                        <div className={styles.loadingText}>
+                            <span>Preparando as aventuras</span>
+                        <p className={styles.loadingSubtext}>Relembrando destinos incríveis...</p>
+                            <div className={styles.loadingDots}>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
                     </div>
                 ) : (
                     <>
@@ -67,7 +84,7 @@ export default function Trips() {
                                         </div>
                                         
                                         <div className={styles.cardInfo}>
-                                            <div>
+                                            <div className={styles.cardDetails}>
                                                 <h3>{trip.title}</h3>
                                                 <h4>{trip.place} - {trip.country}</h4>
                                                 <p>Início: {formatDate(trip.start_date)}</p>
@@ -90,7 +107,7 @@ export default function Trips() {
                     </>
                 )}
             </main>
-            <div className={styles.planeContainer}>
+            {/* <div className={styles.planeContainer}>
                 <div className={styles.plane} aria-hidden="true">
                     <Image
                         src="/icons/logo.png"
@@ -101,7 +118,7 @@ export default function Trips() {
                         priority
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
