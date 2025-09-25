@@ -1,12 +1,9 @@
 .page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffffff 0%, #e6e3df 25%, #ffffff 50%, #fbf0ea 75%, #dcdbdb 100%);
-  background-attachment: fixed;
+  background: linear-gradient(135deg, #ffffff 0%, #e6e3df 25%, rgb(255, 231, 200) 50%, #ffdcc8 75%, #fcfcfc 100%);
   display: flex;
   flex-direction: column;
   padding: 3rem;
-  position: relative;
-  overflow: hidden;
 }
 
 .header {
@@ -31,22 +28,24 @@
 
 .container {
   display: flex;
+  width: 100%;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding: 6rem 0 0 0;
+  margin: 12rem 0 0 0;
 }
 
 .article {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 35%;
 }
 
 .aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 35%;
 }
 
 .logo {
