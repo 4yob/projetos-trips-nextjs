@@ -107,7 +107,7 @@ export default function Trips() {
                     </>
                 )}
             </main>
-            {/* <div className={styles.planeContainer}>
+            <div className={styles.planeContainer}>
                 <div className={styles.plane} aria-hidden="true">
                     <Image
                         src="/icons/logo.png"
@@ -118,7 +118,7 @@ export default function Trips() {
                         priority
                     />
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 }
