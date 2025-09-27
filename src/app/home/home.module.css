@@ -28,24 +28,23 @@
 
 .container {
   display: flex;
-  width: 100%;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 12rem 0 0 0;
+  padding: 5rem 3rem 0 3rem;
 }
 
 .article {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 50%;
 }
 
 .aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35%;
+  width: 50%;
 }
 
 .logo {
@@ -73,6 +72,7 @@
   transition: background-position 0.8s ease;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  cursor: pointer;
 }
 
 .logoText:hover {
