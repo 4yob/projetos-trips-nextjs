@@ -1,6 +1,6 @@
 .page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #e6e3df 25%, #ffffff 50%, #fbf0ea 75%, #dcdbdb 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #ffd59f 25%, #fff9d9 50%, #ffc8ab 75%, #ffffff 100%);
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@
 .description {
     color: rgba(0, 0, 0, 0.9);
     font-size: 1.15rem;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 600px;
 }
 
@@ -94,7 +94,7 @@
 .buttonOutline {
     background: rgba(255, 255, 255, 0.8);
     color: #ff6b35;
-    border: 2px solid #ff6b35;
+    border: 2px solid #ff6a00;
     padding: 0.75rem 2.5rem;
     font-size: 1rem;
     font-weight: 600;
@@ -105,7 +105,7 @@
 }
 
 .buttonOutline:hover {
-    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    background: linear-gradient(135deg, #ff6a00, #ffd700 );
     color: #fff;
     border-color: transparent;
     transform: translateY(-2px);
@@ -114,7 +114,7 @@
 .badge404 {
     font-size: 10rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #ff7171 0%, #ffbb62 25%, #ffe75f 50%, #ff9359 75%, #ff8080 100%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #ffd700 50%, #ffb347 75%, #ff8c69 100%);
     background-clip: border-box;
     text-shadow: none;
     background-size: 200%;

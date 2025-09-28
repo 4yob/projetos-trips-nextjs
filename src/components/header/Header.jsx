@@ -2,9 +2,9 @@ import styles from './Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Header() {
+export default function Header({ className }) {
     return (
-        <header className={styles.header}>
+        <header className={`${styles.header} ${className}`}>
             <Link className={styles.left} href={"/"}>
                 <Image
                     src="/icons/logo.png"

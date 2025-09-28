@@ -11,13 +11,6 @@ export default function Trips() {
     const [trips, setTrips] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const formatDate = (value) => {
-        if (!value) return "";
-        const d = new Date(value);
-        if (isNaN(d)) return value;
-        return d.toLocaleDateString('pt-BR');
-    };
-
     const fetchTrips = async () => {
         try {
             const response = await axios.get(
@@ -87,9 +80,8 @@ export default function Trips() {
                                             <div className={styles.cardDetails}>
                                                 <h3>{trip.title}</h3>
                                                 <h4>{trip.place} - {trip.country}</h4>
-                                                <p>Início: {formatDate(trip.start_date)}</p>
-                                                <p>Fim: {formatDate(trip.end_date)}</p>
-                                                <p>Criado em: {formatDate(trip.created_at)}</p>
+                                                <p>Início: {trip.start_date}</p>
+                                                <p>Fim: {trip.end_date}</p>
                                             </div>
                                             <div className={styles.cardActions}>
                                                 <Link

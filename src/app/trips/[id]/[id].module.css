@@ -1,0 +1,227 @@
+.page {
+    width: 100%;
+    min-height: 100vh;
+    height: 200vh;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tripImageContainer {
+    width: 82rem;
+    height: 40rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.tripImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.tripTitleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: -50px;
+    width: 40rem;
+    height: 5rem;
+    padding: 1rem 2rem;
+    z-index: 5;
+}
+
+.tripTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff7171 0%, #ffbb62 25%, #ffe75f 50%, #ff9359 75%, #ff8080 100%);
+    background-clip: border-box;
+    margin-left: 1.5rem;
+    text-shadow: none;
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.8s ease;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tripTitle:hover {
+    background-position: right;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+/* Timeline Styles */
+.timelineContainer {
+    width: 50%;
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.timelineTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Linha vertical principal */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(135deg, #ffd59f 0%, #ffc8ab 50%, #ffd59f 100%);
+    border-radius: 2px;
+}
+
+.timelineItem {
+    position: relative;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.timelineMarker {
+    position: absolute;
+    left: -30px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+}
+
+.timelineMarker:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.timelineContent {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-left: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 213, 159, 0.3);
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.timelineContent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.timelineItemTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+}
+
+.timelineItemDescription {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
+
+.timelineTime {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd59f 0%, #ffc8ab 100%);
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(255, 200, 171, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .timelineContainer {
+        padding: 0 1rem;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timelineMarker {
+        left: -25px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .timelineContent {
+        margin-left: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .timelineTitle {
+        font-size: 1.5rem;
+    }
+}
