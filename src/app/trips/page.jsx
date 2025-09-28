@@ -80,8 +80,8 @@ export default function Trips() {
                                             <div className={styles.cardDetails}>
                                                 <h3>{trip.title}</h3>
                                                 <h4>{trip.place} - {trip.country}</h4>
-                                                <p>Início: {trip.start_date}</p>
-                                                <p>Fim: {trip.end_date}</p>
+                                                <p>Chegada: {trip.start_date}</p>
+                                                <p>Partida: {trip.end_date}</p>
                                             </div>
                                             <div className={styles.cardActions}>
                                                 <Link
