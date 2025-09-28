@@ -30,7 +30,12 @@ export default function Trips() {
 
     return (
         <div className={styles.page}>
-            <Header />
+            <Header 
+                customLinks={[
+                    { href: "/favorites", label: "Favoritos" },
+                    { href: "/about", label: "Sobre" }
+                ]}
+            />
 
             <main className={styles.main}>
                 <h1 className={styles.title}>Galeria de Viagens</h1>

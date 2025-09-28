@@ -56,7 +56,16 @@ export default function TripDetailsPage({ params }) {
 
     return (
         <div className={styles.page}>
-            <Header className={styles.header} />
+            <Header 
+            className={styles.header}
+            showBackButton={true}
+            backUrl="/trips"
+            backLabel="Voltar para Viagens"
+            customLinks={[
+                { href: "/favorites", label: "Favoritos" },
+                { href: "/about", label: "Sobre" }
+            ]}
+        />
             <div className={styles.tripImageContainer}>
                 <img
                     src={`/img/${trip.photo}`}
