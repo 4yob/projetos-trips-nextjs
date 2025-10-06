@@ -1,0 +1,9 @@
+.page {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #ffd59f 25%, #fff9d9 50%, #ffc8ab 75%, #ffffff 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
