@@ -28,10 +28,8 @@
 }
 
 .planeContainer {
-    position: relative;
-    width: 100%;
-    height: 12rem;
-    overflow: hidden;
+    width: 90%;
+    height: 5rem;
 }
 
 .plane {
@@ -58,7 +56,7 @@
     5% { opacity: 1; }
     95% { opacity: 1; }
     100% {
-        left: 100%;
+        left: 95%;
         opacity: 0;
     }
 }
@@ -226,6 +224,20 @@
 .loadingDots span:nth-child(2) { animation-delay: -0.16s; }
 .loadingDots span:nth-child(3) { animation-delay: 0s; }
 
+.errorWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.errorWrapper h3 {
+    font-size: 1.5rem;
+    color: #d9534f;
+}
+
 @keyframes planeFlySmooth {
     0%, 100% {
         transform: translateX(0) translateY(0) rotate(0deg);
@@ -291,5 +303,85 @@
 
     50% {
         opacity: 0.5;
+    }
+}
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.errorIcon {
+    font-size: 4rem;
+    animation: shake 2s ease-in-out infinite;
+}
+
+.errorTitle {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.errorMessage {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0;
+}
+
+.retryButton {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.retryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    filter: brightness(1.05);
+}
+
+@media (max-width: 768px) {
+    .errorContainer {
+        min-height: 40vh;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .errorIcon {
+        font-size: 3rem;
+    }
+
+    .errorTitle {
+        font-size: 1.5rem;
+    }
+
+    .errorMessage {
+        font-size: 1rem;
+    }
+
+    .retryButton {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
     }
 }

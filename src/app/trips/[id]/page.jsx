@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, use } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import MapComponent from "../../../components/mapComponent/mapComponent";
 import axios from "axios";
 import styles from "./[id].module.css";
@@ -35,8 +35,25 @@ export default function TripDetailsPage({ params }) {
 
     if (loading) {
         return (
-            <div className={styles.container}>
+            <div className={styles.page}>
+                <Header
+                    className={styles.header}
+                    showBackButton={true}
+                    backUrl="/trips"
+                    backLabel="Voltar para Viagens"
+                    customLinks={[
+                        { href: "/favorites", label: "Favoritos" },
+                        { href: "/about", label: "Sobre" }
+                    ]}
+                />
                 <div className={styles.loadingWrapper}>
+                    <Image
+                        src="/icons/logo.png"
+                        alt="Logo TRIPS.COM"
+                        width={50}
+                        height={50}
+                        className={styles.loadingImage}
+                    />
                     <p className={styles.loadingText}>Carregando detalhes da viagem...</p>
                 </div>
             </div>
@@ -45,10 +62,20 @@ export default function TripDetailsPage({ params }) {
 
     if (!trip) {
         return (
-            <div className={styles.container}>
+            <div className={styles.page}>
+                <Header
+                    className={styles.header}
+                    showBackButton={true}
+                    backUrl="/trips"
+                    backLabel="Voltar para Viagens"
+                    customLinks={[
+                        { href: "/favorites", label: "Favoritos" },
+                        { href: "/about", label: "Sobre" }
+                    ]}
+                />
                 <div className={styles.errorWrapper}>
-                    <h3>Viagem não encontrada</h3>
-                    <Link href="/trips">Voltar para lista</Link>
+                    <h3>Detalhes não carregados</h3>
+                    <p>Desculpe, algum problema ocorreu ao encontrar os detalhes da viagem.</p>
                 </div>
             </div>
         );
