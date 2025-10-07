@@ -1,4 +1,4 @@
-# 🌍 Trips Next.js - Galeria de Viagens
+# <img width="40" height="40" alt="image" src="https://github.com/user-attachments/assets/b876613f-5460-426a-aa6b-ebdd393ffc95" /> TRIPS.COM Next.js - Galeria de Viagens
 
 Uma aplicação web moderna para explorar e gerenciar viagens, construída com Next.js 15 e React 19. O projeto apresenta uma galeria interativa de destinos turísticos com funcionalidades de navegação, visualização detalhada e sistema de favoritos.
 
@@ -19,17 +19,15 @@ Uma aplicação web moderna para explorar e gerenciar viagens, construída com N
 - Página individual para cada destino
 - Timeline interativa com marcos da viagem
 - Mapa integrado do Google Maps
-- Galeria de imagens com design imersivo
 
 ### ⭐ **Sistema de Favoritos**
-- Marcar/desmarcar viagens como favoritas
 - Página dedicada para viagens favoritadas
-- Botões com feedback visual e animações
+- Botões com feedback visual
 
-### 👤 **Sobre o Autor**
-- Página pessoal com informações do desenvolvedor
+### 👤 **Sobre a Autora**
+- Página pessoal com informações da desenvolvedora
 - Links de contato (LinkedIn, Gmail, GitHub)
-- Design elegante com foto e biografia
+- Design elegante com foto e descrição do projeto
 
 ### 🎨 **Design e UX**
 - Interface moderna com efeitos glassmorphism
@@ -99,64 +97,64 @@ yarn start
 ```
 
 ### **5. Acesse a Aplicação**
-Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+Abra [http://localhost:3001](http://localhost:3001) no seu navegador.
 
 ## 🗂️ Estrutura do Projeto
 
 ```
 projetos-trips-nextjs/
-├── 📁 public/                    # Arquivos estáticos
-│   ├── 📁 icons/                 # Ícones e logos
+├── 📁 public/                        # Arquivos estáticos
+│   ├── 📁 icons/                     # Ícones e logos
 │   │   ├── favicon.ico
 │   │   ├── logo.png
 │   │   └── ...
-│   └── 📁 img/                   # Imagens das viagens
+│   └── 📁 img/                       # Imagens das viagens
 │       ├── paris.jpg
 │       ├── tokyo.jpg
 │       └── ...
 ├── 📁 src/
-│   ├── 📁 app/                   # App Router (Next.js 13+)
-│   │   ├── 📄 globals.css        # Estilos globais
-│   │   ├── 📄 layout.jsx         # Layout principal
-│   │   ├── 📄 page.jsx           # Página inicial (redirect)
-│   │   ├── 📄 not-found.jsx      # Página 404
-│   │   ├── 📁 home/              # Página inicial
+│   ├── 📁 app/                       # App Router (Next.js 13+)
+│   │   ├── 📄 globals.css            # Estilos globais
+│   │   ├── 📄 layout.jsx             # Layout principal
+│   │   ├── 📄 page.jsx               # Página inicial (redirect)
+│   │   ├── 📄 not-found.jsx          # Página 404
+│   │   ├── 📁 home/                  # Página inicial
 │   │   │   ├── 📄 page.jsx
 │   │   │   └── 📄 home.module.css
-│   │   ├── 📁 trips/             # Galeria de viagens
+│   │   ├── 📁 trips/                 # Galeria de viagens
 │   │   │   ├── 📄 page.jsx
 │   │   │   ├── 📄 trips.module.css
-│   │   │   └── 📁 [id]/          # Detalhes da viagem
+│   │   │   └── 📁 [id]/              # Detalhes da viagem
 │   │   │       ├── 📄 page.jsx
 │   │   │       └── 📄 [id].module.css
-│   │   ├── 📁 favorites/         # Viagens favoritas
+│   │   ├── 📁 favorites/             # Viagens favoritas
 │   │   │   ├── 📄 page.jsx
 │   │   │   └── 📄 favorites.module.css
-│   │   └── 📁 about/             # Sobre o autor
+│   │   └── 📁 about/                 # Sobre o autor
 │   │       ├── 📄 page.jsx
 │   │       └── 📄 about.module.css
-│   └── 📁 components/            # Componentes reutilizáveis
-│       ├── 📁 header/            # Cabeçalho da aplicação
+│   └── 📁 components/                # Componentes reutilizáveis
+│       ├── 📁 header/                # Cabeçalho da aplicação
 │       │   ├── 📄 Header.jsx
 │       │   └── 📄 Header.module.css
-│       ├── 📁 tripCard/          # Card de viagem
+│       ├── 📁 tripCard/              # Card de viagem
 │       │   ├── 📄 TripCard.jsx
 │       │   └── 📄 TripCard.module.css
-│       ├── 📁 favoriteButton/    # Botão de favoritar
+│       ├── 📁 favoriteButton/                # Botão de favoritar
 │       │   ├── 📄 FavoriteButton.jsx
 │       │   └── 📄 FavoriteButton.module.css
-│       ├── 📁 contactButton/     # Botões de contato
+│       ├── 📁 contactButton/                 # Botões de contato
 │       │   ├── 📄 ContactButton.jsx
 │       │   └── 📄 ContactButton.module.css
-│       └── 📁 mapComponent/      # Componente do mapa
+│       └── 📁 mapComponent/                  # Componente do mapa
 │           ├── 📄 MapComponent.jsx
 │           ├── 📄 mapComponent.module.css
 │           └── 📄 dataStructure.js
-├── 📄 .env.local                 # Variáveis de ambiente
-├── 📄 package.json               # Dependências e scripts
-├── 📄 next.config.mjs           # Configuração do Next.js
-├── 📄 eslint.config.mjs         # Configuração do ESLint
-└── 📄 README.md                 # Documentação do projeto
+├── 📄 .env.local                     # Variáveis de ambiente
+├── 📄 package.json                   # Dependências e scripts
+├── 📄 next.config.mjs                # Configuração do Next.js
+├── 📄 eslint.config.mjs              # Configuração do ESLint
+└── 📄 README.md                      # Documentação do projeto
 ```
 
 ## 🔌 Integração com API
@@ -230,35 +228,13 @@ npm start           # Inicia servidor de produção
 npm run lint        # Executa linting do código
 ```
 
-## 📝 Próximas Funcionalidades
+## 👨‍💻 Autora
 
-- [ ] Sistema de autenticação de usuários
-- [ ] Persistência de favoritos no banco de dados
-- [ ] Filtros por país/continente
-- [ ] Sistema de avaliações e comentários
-- [ ] Integração com redes sociais
-- [ ] PWA (Progressive Web App)
-- [ ] Modo escuro/claro
-
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## 👨‍💻 Autor
-
-**Seu Nome**
-- LinkedIn: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
+**Alejandra Barros**
+- LinkedIn: [/in/barrosalejandra](https://www.linkedin.com/in/barrosalejandra/)
 - GitHub: [4yob](https://github.com/4yob)
-- Email: seu.email@gmail.com
+- Email: alejandra.barros@aluno.senai.br
 
 ---
 
-⭐ **Se este projeto foi útil para você, considere dar uma estrela!**
+⭐ **Se gostou e de alguma forma este projeto foi útil para você, considere dar uma estrela!**
