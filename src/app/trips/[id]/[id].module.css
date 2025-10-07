@@ -80,7 +80,7 @@
 }
 
 .container2 {
-    height: 30rem;
+    max-height: 40rem;
 }
 
 .timelineTitle {
