@@ -6,6 +6,7 @@ import styles from './favorites.module.css';
 import Image from "next/image";
 import Header from '../../components/header/Header';
 import TripCard from '../../components/tripCard/TripCard';
+import FavoriteButton from '../../components/favoriteButton/favoriteButton';
 
 export default function Favorites() {
     const [favoriteTrips, setFavoriteTrips] = useState([]);
@@ -42,7 +43,7 @@ export default function Favorites() {
                 ]}
             />
             <main className={styles.main}>
-                <h1 className={styles.title}>Viagens Favoritadas</h1>
+                <h1 className={styles.title}>⭐ Viagens Favoritadas ⭐</h1>
 
                 {loading ? (
                     <div className={styles.loading}>
@@ -98,7 +99,7 @@ export default function Favorites() {
                     <>
                         <div className={styles.tripsContainer}>
                             {favoriteTrips.map((favoriteTrip) => (
-                                <TripCard key={favoriteTrip.id} trip={favoriteTrip} />
+                                <TripCard key={favoriteTrip.id} trip={favoriteTrip} favoriteButton />
                             ))}
                         </div>
                     </>

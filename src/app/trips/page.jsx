@@ -6,6 +6,7 @@ import styles from "./trips.module.css";
 import Image from "next/image";
 import Header from '../../components/header/Header';
 import TripCard from '../../components/tripCard/TripCard';
+import FavoriteButton from '../../components/favoriteButton/favoriteButton';
 
 export default function Trips() {
     const [trips, setTrips] = useState([]);

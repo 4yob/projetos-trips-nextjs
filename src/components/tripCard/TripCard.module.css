@@ -176,8 +176,11 @@
 
 .cardActions {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
     margin-top: 1rem;
+    position: relative;
+    gap: 1rem;
 }
 
 .cardButton {
@@ -381,6 +384,11 @@
     filter: brightness(1.03);
 }
 
+.favoriteButtonContainer {
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
 @keyframes cardEnter {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
@@ -462,4 +470,26 @@
         width: 180%;
         max-width: 800px;
     }
+}
+
+/* ======================
+   FAVORITE BUTTON
+   ====================== */
+.favoriteButtonContainer {
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+/* Cards ímpares (esquerda) - botão alinhado à direita */
+.tripCard:nth-child(odd) .cardActions {
+    align-items: flex-end;
+}
+
+/* Cards pares (direita) - botão alinhado à esquerda */
+.tripCard:nth-child(even) .cardActions {
+    align-items: flex-start;
+}
+
+.tripCard:hover .favoriteButtonContainer {
+    transform: scale(1.1);
 }

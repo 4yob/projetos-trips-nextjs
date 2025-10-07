@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './TripCard.module.css';
+import FavoriteButton from '../favoriteButton/FavoriteButton';
 
-export default function TripCard({ trip }) {
+export default function TripCard({ trip, favoriteButton = false }) {
     return (
         <div className={styles.tripCard}>
             <div className={styles.cardContent}>
@@ -34,6 +35,11 @@ export default function TripCard({ trip }) {
                         >
                             Ver Detalhes
                         </Link>
+                        {favoriteButton && (
+                            <div className={styles.favoriteButtonContainer}>
+                                <FavoriteButton />
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
