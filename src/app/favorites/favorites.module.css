@@ -1,0 +1,166 @@
+.page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #ffd59f 25%, #fff9d9 50%, #ffc8ab 75%, #ffffff 100%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 0 0 0;
+}
+
+.title {
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tripsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 95%;
+    max-width: 1000px;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+    align-items: center;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    gap: 2rem;
+    position: relative;
+}
+
+.loadingPlane {
+    position: relative;
+    animation: 
+        planeFlySmooth 4s ease-in-out infinite,
+        planeFloatGentle 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+    transform-origin: center;
+}
+
+.loadingPlaneImage {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    animation: planeRotateGentle 6s ease-in-out infinite;
+}
+
+.loadingText {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.2rem;
+    font-weight: 500;
+    animation: pulse 2s ease-in-out infinite;
+    text-align: center;
+}
+
+.loadingSubtext {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+    font-weight: 400;
+    animation: fadeInOut 3s ease-in-out infinite;
+    margin: 0;
+    text-align: center;
+}
+
+.loadingDots {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.loadingDots span {
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 50%;
+    animation: dotBounce 1.4s ease-in-out infinite both;
+}
+
+.loadingDots span:nth-child(1) { animation-delay: -0.32s; }
+.loadingDots span:nth-child(2) { animation-delay: -0.16s; }
+.loadingDots span:nth-child(3) { animation-delay: 0s; }
+
+.errorWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.errorWrapper h3 {
+    font-size: 1.5rem;
+    color: #d9534f;
+}
+
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.errorIcon {
+    font-size: 4rem;
+    animation: shake 2s ease-in-out infinite;
+}
+
+.errorTitle {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.errorMessage {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0;
+}
+
+.retryButton {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.retryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    filter: brightness(1.05);
+}
