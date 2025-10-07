@@ -110,3 +110,91 @@
     justify-content: center;
     margin-top: 2rem;
 }
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+        max-width: none;
+        width: 95%;
+    }
+
+    .authorImageContainer {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .authorImage {
+        width: 250px;
+        height: 250px;
+    }
+
+    .infosContainer {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .authorTitle {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .authorName {
+        font-size: 1.3rem;
+    }
+
+    .authorAge {
+        font-size: 1.1rem;
+    }
+
+    .authorBio {
+        text-align: center;
+    }
+
+    .descriptionText {
+        text-align: justify;
+        text-align-last: center;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding: 0 0.5rem;
+    }
+
+    .main {
+        margin: 1rem 0.5rem;
+        padding: 1rem;
+    }
+
+    .authorImage {
+        width: 200px;
+        height: 200px;
+    }
+
+    .authorTitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .authorName {
+        font-size: 1.2rem;
+    }
+
+    .authorAge {
+        font-size: 1rem;
+    }
+
+    .descriptionText {
+        text-align: justify;
+        text-align-last: center;
+        font-size: 0.9rem;
+    }
+
+    .contactContainer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

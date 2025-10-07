@@ -118,3 +118,129 @@
     background: rgba(255, 255, 255, 0.2);
     transform: translateX(-2px);
 }
+
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        padding: 0 1rem;
+    }
+
+    .left {
+        width: auto;
+        min-width: fit-content;
+    }
+
+    .right {
+        width: auto;
+        padding-right: 1rem;
+        gap: 2rem;
+    }
+
+    .navLink {
+        font-size: 0.8rem;
+    }
+
+    .logoContainer {
+        position: static;
+        transform: none;
+        margin-left: 0;
+    }
+
+    .logoContainerCentered {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .logoText {
+        font-size: 1.2rem;
+        margin-left: 0.8rem;
+    }
+
+    .logo {
+        margin: 0;
+        width: 35px;
+        height: 35px;
+    }
+
+    .logoContainerCentered .logoText {
+        margin-left: 0.8rem;
+    }
+
+    .backButton {
+        padding: 0.4rem 0.8rem;
+        margin-left: 0;
+        font-size: 0.8rem;
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 50px;
+        padding: 0 0.5rem;
+    }
+
+    .right {
+        gap: 1rem;
+        padding-right: 0.5rem;
+    }
+
+    .navLink {
+        font-size: 0.7rem;
+    }
+
+    .logoText {
+        font-size: 1rem;
+        margin-left: 0.5rem;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logoContainerCentered .logoText {
+        margin-left: 0.5rem;
+    }
+
+    .backButton {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .header {
+        height: 45px;
+    }
+
+    .right {
+        gap: 0.5rem;
+    }
+
+    .logoText {
+        font-size: 0.9rem;
+        margin-left: 0.3rem;
+    }
+
+    .logo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logoContainerCentered .logoText {
+        margin-left: 0.3rem;
+    }
+
+    .navLink {
+        font-size: 0.6rem;
+    }
+
+    .backButton {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.6rem;
+    }
+}

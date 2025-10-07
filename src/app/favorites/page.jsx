@@ -43,7 +43,8 @@ export default function Favorites() {
                 ]}
             />
             <main className={styles.main}>
-                <h1 className={styles.title}>⭐ Viagens Favoritadas ⭐</h1>
+                <h1>🌟</h1>
+                <h1 className={styles.title}>Viagens Favoritadas</h1>
 
                 {loading ? (
                     <div className={styles.loading}>

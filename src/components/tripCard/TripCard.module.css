@@ -381,6 +381,18 @@
     z-index: 5;
 }
 
+.tripCard:nth-child(odd) .cardActions {
+    align-items: flex-end;
+}
+
+.tripCard:nth-child(even) .cardActions {
+    align-items: flex-start;
+}
+
+.tripCard:hover .favoriteButtonContainer {
+    transform: scale(1.1);
+}
+
 @keyframes cardEnter {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
@@ -427,18 +439,208 @@
     }
     
     .tripCard:hover .cardContent {
-        flex-direction: column;
+        flex-direction: column !important;
+        gap: 0 !important;
+        align-items: stretch !important;
+    }
+    
+    .tripCard:nth-child(odd):hover .cardContent,
+    .tripCard:nth-child(even):hover .cardContent {
+        flex-direction: column !important;
     }
     
     .tripCard:hover .tripImageWrapper {
-        width: 100%;
-        margin-bottom: 1rem;
+        width: 100% !important;
+        min-width: 100% !important;
+        margin-bottom: 0 !important;
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
     }
     
     .tripCard:hover .cardInfo {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem 0 0 0 !important;
+        min-width: auto !important;
+        position: relative !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        opacity: 1 !important;
+        pointer-events: all !important;
+        top: 0 !important;
+        left: 0 !important;
+    }
+    
+    .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:nth-child(odd) .cardActions,
+    .tripCard:nth-child(even) .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:nth-child(odd) .cardDetails,
+    .tripCard:nth-child(even) .cardDetails {
+        text-align: center !important;
+    }
+    
+    .tripCard:nth-child(odd):hover .cardActions,
+    .tripCard:nth-child(even):hover .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:hover .cardInfo {
+        overflow: visible;
+    }
+}
+
+@media (max-width: 480px) {
+    .tripCard {
+        padding: 16px;
+        min-height: 280px;
+        height: 280px;
+        max-width: 100%;
+        margin: 0 8px;
+    }
+    
+    .tripCard:nth-child(odd):hover,
+    .tripCard:nth-child(even):hover {
         width: 100%;
-        padding-left: 0;
-        opacity: 1;
+        max-width: 100%;
+        height: auto;
+        min-height: 450px;
+        transform: none;
+    }
+    
+    .tripCard:hover .tripImageWrapper {
+        height: 200px;
+    }
+    
+    .cardDetails {
+        margin-bottom: 1rem;
+        text-align: center !important;
+        width: 100%;
+    }
+    
+    .titleOverlay {
+        width: 85%;
+        max-width: 200px;
+        padding: 0.6rem 1.2rem;
+        height: auto;
+    }
+    
+    .titleOverlay h3 {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .tripCard h3 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+        text-align: center !important;
+    }
+    
+    .tripCard h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+        text-align: center !important;
+    }
+    
+    .tripCard p {
+        font-size: 0.75rem;
+        margin-bottom: 0.2rem;
+        line-height: 1.3;
+        text-align: center !important;
+    }
+    
+    .cardButton {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
+    
+    .cardActions {
+        margin-top: 1rem;
+        gap: 0.5rem;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .tripCard {
+        padding: 20px;
+        min-height: 320px;
+        height: 320px;
+        margin: 0 12px;
+    }
+    
+    .tripCard:nth-child(odd):hover,
+    .tripCard:nth-child(even):hover {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 500px;
+        transform: none;
+    }
+    
+    .tripCard:hover .tripImageWrapper {
+        height: 220px;
+    }
+    
+    .cardDetails {
+        margin-bottom: 1.2rem;
+        text-align: center !important;
+        width: 100%;
+    }
+    
+    .titleOverlay {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .titleOverlay h3 {
+        font-size: 0.9rem;
+    }
+    
+    .tripCard h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        text-align: center !important;
+    }
+    
+    .tripCard h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+        text-align: center !important;
+    }
+    
+    .tripCard p {
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+        text-align: center !important;
+    }
+    
+    .cardButton {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .cardActions {
+        margin-top: 1.2rem;
+        gap: 0.6rem;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
     }
 }
 
@@ -538,24 +740,321 @@
     }
 }
 
-/* ======================
-   FAVORITE BUTTON
-   ====================== */
-.favoriteButtonContainer {
-    transition: all 0.3s ease;
-    z-index: 5;
+@media (max-width: 480px) {
+    .tripCard {
+        padding: 16px;
+        min-height: 280px;
+        height: 280px;
+        max-width: 100%;
+        margin: 0 8px;
+    }
+    
+    .tripCard:nth-child(odd):hover,
+    .tripCard:nth-child(even):hover {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 450px;
+        transform: none;
+    }
+    
+    .tripCard:hover .cardContent {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        height: auto;
+    }
+    
+    .tripCard:hover .tripImageWrapper {
+        width: 100%;
+        min-width: 100%;
+        height: 200px;
+        margin-bottom: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .tripCard:hover .cardInfo {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem 0 0 0;
+        min-width: auto;
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+        pointer-events: all;
+        top: 0;
+        left: 0;
+    }
+    
+    .cardDetails {
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .titleOverlay {
+        width: 85%;
+        max-width: 200px;
+        padding: 0.6rem 1.2rem;
+        height: auto;
+    }
+    
+    .titleOverlay h3 {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .tripCard h3 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+        text-align: center;
+    }
+    
+    .tripCard h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+        text-align: center;
+    }
+    
+    .tripCard p {
+        font-size: 0.75rem;
+        margin-bottom: 0.2rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+    
+    .cardButton {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
+    
+    .cardActions {
+        margin-top: 1rem;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:nth-child(odd) .cardActions,
+    .tripCard:nth-child(even) .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:nth-child(odd) .cardDetails,
+    .tripCard:nth-child(even) .cardDetails {
+        text-align: center !important;
+    }
+    
+    .tripCard:nth-child(odd):hover .cardActions,
+    .tripCard:nth-child(even):hover .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:hover .cardInfo {
+        overflow: visible;
+    }
 }
 
-/* Cards ímpares (esquerda) - botão alinhado à direita */
-.tripCard:nth-child(odd) .cardActions {
-    align-items: flex-end;
+@media (min-width: 481px) and (max-width: 768px) {
+    .tripCard {
+        padding: 20px;
+        min-height: 320px;
+        height: 320px;
+        margin: 0 12px;
+    }
+    
+    .tripCard:nth-child(odd):hover,
+    .tripCard:nth-child(even):hover {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 500px;
+        transform: none;
+    }
+    
+    .tripCard:hover .cardContent {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        height: auto;
+    }
+    
+    .tripCard:hover .tripImageWrapper {
+        width: 100%;
+        min-width: 100%;
+        height: 220px;
+        margin-bottom: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .tripCard:hover .cardInfo {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.2rem 0 0 0;
+        min-width: auto;
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+        pointer-events: all;
+        top: 0;
+        left: 0;
+    }
+    
+    .cardDetails {
+        margin-bottom: 1.2rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .titleOverlay {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .titleOverlay h3 {
+        font-size: 0.9rem;
+    }
+    
+    .tripCard h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        text-align: center;
+    }
+    
+    .tripCard h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+        text-align: center;
+    }
+    
+    .tripCard p {
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+        text-align: center;
+    }
+    
+    .cardButton {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .cardActions {
+        margin-top: 1.2rem;
+        gap: 0.6rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:nth-child(odd) .cardActions,
+    .tripCard:nth-child(even) .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:nth-child(odd) .cardDetails,
+    .tripCard:nth-child(even) .cardDetails {
+        text-align: center !important;
+    }
+    
+    .tripCard:nth-child(odd):hover .cardActions,
+    .tripCard:nth-child(even):hover .cardActions {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .tripCard:hover .cardInfo {
+        overflow: visible;
+    }
 }
 
-/* Cards pares (direita) - botão alinhado à esquerda */
-.tripCard:nth-child(even) .cardActions {
-    align-items: flex-start;
-}
-
-.tripCard:hover .favoriteButtonContainer {
-    transform: scale(1.1);
+@media (max-width: 768px) {
+    .tripCard {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .tripCard:nth-child(odd),
+    .tripCard:nth-child(even) {
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        transform: none;
+        animation: cardEnter 0.6s ease both;
+    }
+    
+    .tripCard:nth-child(odd):hover,
+    .tripCard:nth-child(even):hover {
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .tripCard:hover .cardContent {
+        flex-direction: column;
+    }
+    
+    .tripCard:hover .tripImageWrapper {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .tripCard:hover .cardInfo {
+        width: 100%;
+        padding-left: 0;
+        opacity: 1;
+    }
+    
+    .cardActions {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .tripCard:nth-child(odd) .cardActions,
+    .tripCard:nth-child(even) .cardActions {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .tripCard:nth-child(odd) .cardDetails,
+    .tripCard:nth-child(even) .cardDetails {
+        text-align: center;
+    }
+    
+    .tripCard:nth-child(odd):hover .cardActions,
+    .tripCard:nth-child(even):hover .cardActions {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .tripCard:hover .cardInfo {
+        overflow: visible;
+    }
 }
